@@ -1,7 +1,7 @@
-import '@riotjs/hot-reload'
-import {component} from 'riot'
-import Random from './random.riot'
+import "@riotjs/hot-reload";
+import { component } from "riot";
+import Wrapper from "./wrapper.riot";
 
-component(Random)(document.getElementById('app'), {
-  title: 'Hi there!'
-})
+component(Wrapper)(document.getElementById("app"), {
+  title: "Hi there!",
+});
