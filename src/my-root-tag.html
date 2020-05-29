@@ -1,0 +1,22 @@
+<my-root-tag>
+ <h1>Tag root</h1>
+ <h2>{stx.message}</h2>
+ <tag2></tag2>
+ <tag1></tag1>
+ <script>
+  export default {
+    stx: {
+      // by declaring stx.message, this component auto-subscribes to any change on state.message and vice versa
+      message:null
+    },
+    onUpdated(){
+      //you can even change the var in onUpdated handler !
+      setTimeout(()=>{
+        this.stx.message='Another message after 8s'
+        //or use (exactly the same thing)
+        //state.message='Another message after 8s'
+      },8000)
+    }
+  }
+ </script>
+</my-root-tag>
