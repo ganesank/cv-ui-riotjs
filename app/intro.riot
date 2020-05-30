@@ -1,0 +1,28 @@
+<intro>
+	<header class="hero">
+		<div class="container">
+			<h1>{props.data.title}</h1>
+			<h4>{props.data.subtitle}</h4>
+			<raw html={props.data.desc} />
+		</div>
+	</header>
+	<script>
+		import Raw from './raw.riot'
+		export default {
+			components: {
+				Raw
+			},
+		}
+	</script>
+	<style>
+		.hero {
+			position: relative;
+			width: 100%;
+			
+			text-align: center;
+			min-height: 300px;
+			padding: 1px 0;
+			
+		}
+	</style>
+</intro>

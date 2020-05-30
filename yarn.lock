@@ -3605,6 +3605,11 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+picnic@^6.5.2:
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/picnic/-/picnic-6.5.2.tgz#3c307b1556eeed3da4fe63a18d9f1ef77690ecec"
+  integrity sha512-USH4JQiJVxrdW5vmFd5Ko1LSncCv6pzHj2Fujule64PZssB6VqZ569mfB4XDDs8dKN/KiezQ+Vvnft4/VLX7mA==
+
 picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"

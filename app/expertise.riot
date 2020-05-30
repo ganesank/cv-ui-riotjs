@@ -1,0 +1,60 @@
+<links>
+    <div class="container">
+		<div class="flex one four-600">
+			<div class="growth-text-box">
+			<span class="growth-text-icon">
+				<i class={props.data.icon}></i>
+			</span>
+			<h2 class="title"> {props.data.title}</h2>
+			<div class="top-title">{props.data.subtitle}</div>
+		</div>
+			<div class="three-fourth-600">
+				<div class="flex  one ">
+					<div class=" " each={ link in props.data.content }>
+						<article class="card">
+							<header>
+								<h3>{link.title}</h3>
+							</header>
+							<div class="card-body">
+								<ul>
+									<li class="card-title" each={ link1 in link.content }>
+										<p>{link1.title} <br />
+										<span class="label" each={ link2 in link1.content }>{ link2.title }</span>
+										</p>
+									</li>
+								</ul>
+							</div>
+
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		import Raw from './raw.riot'
+		export default {
+			components: {
+				Raw
+			},
+             onMounted() {
+                //console.log(this.props.data)
+            },
+		}
+       
+	</script>
+	<style>
+		.hero {
+			position: relative;
+			width: 100%;
+			height: 70vh;
+			transition: height 999999s;
+			text-align: center;
+			min-height: 300px;
+			color: #333;
+			padding: 1px 0;
+			background: #b9dbff;
+			background-size: cover;
+		}
+	</style>
+</links>
