@@ -1,23 +1,30 @@
 <list>
-    <div class="container">
-        <div class="flex one four-600">
+<div class="container">
+    <div class="row">
+        <div class="sm-12 md-3  lg-3  col">
             <div class="growth-text-box">
-			<span class="growth-text-icon">
-				<i class={props.data.icon}></i>
-			</span>
-			<h2 class="title"> {props.data.title}</h2>
-			<div class="top-title">{props.data.subtitle}</div>
-		</div>
-            <div class="three-fourth-600">
-                <div class="flex  ">
-                    <div class="" each={ link in props.data.content }>
-                        <a class="card" href={link.link} target="_blank">
-                             <h3 class="card-title" >{link.title}</h3>
-                        </a>
-                    </div>
-                </div>
+                <span class="growth-text-icon">
+                    <i class={props.data.icon}></i>
+                </span>
+                <h2 class="title"> {props.data.title}</h2>
+                <div class="top-title">{props.data.subtitle}</div>
+            </div></div>
+            <div class="sm-12 md-9  lg-9  col">
+
+            <table>
+  
+  <tbody>
+    <tr each={ link in props.data.content }>
+      <td><a href={link.link} target="_blank">
+                            {link.title}
+                        </a></td>
+    </tr>
+   
+  </tbody>
+</table>
+                
             </div>
-        </div>
+        </div></div>
     </div>
 	<script>
 		import Raw from './raw.riot'

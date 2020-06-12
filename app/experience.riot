@@ -1,47 +1,72 @@
 <experience>
     <div class="container">
-      <div class="flex one four-600">
-        <div class="growth-text-box">
-        <span class="growth-text-icon">
-          <i class={props.data.icon}></i>
-        </span>
-        <h2 class="title"> {props.data.title}</h2>
-        <div class="top-title">{props.data.subtitle}</div>
-      </div>
-        <div class="three-fourth-600">
-          <div class="masonry-item masonry-brick" each={ link in props.data.content }>
-            <div class="post-single portfolio-box">
-              <div class="post-content">
-                <div class="post-meta">
-                  <span class="meta-item">
-                    <span class="icon">
-                      <i title="Post publish date" class="fal fa-clock">
-                      </i>
-                      </span> >{link.startdate} - {link.enddate}</span> 
-                      </div>
-                <h2 class="post-title">{link.title}</h2>
-                <a href={link.link} target="_blank">{link.company}  {link.location}</a>
-               <div class="small">
-                <raw html={link.desc} /></div>
-              </div>
-            </div>
-          </div>
+ 	<div class="row">
+ 		<div class="sm-12 md-3  lg-3  col">
+ 			<div class="growth-text-box">
+ 				<span class="growth-text-icon">
+ 					<i class={props.data.icon}></i>
+ 				</span>
+ 				<h2 class="title"> {props.data.title}</h2>
+ 				<div class="top-title">{props.data.subtitle}</div>
+ 			</div>
+ 		</div>
+ 		<div class="sm-12 md-9  lg-9  col">
+ 			<div class="masonry-item masonry-brick" each={ (link, index) in props.data.content }>
+ 				<div class="card margin-top-small">
+ 					<div class="card-body">
+ 						<h4 class="card-title">{link.title}</h4>
+ 						<a class="card-link" href="#">{link.startdate} - {link.enddate}</a>
+ 						<h5 class="card-subtitle"> <a href={link.link} target="_blank">{link.company} </a> {link.location}</h5>
+ 						<div class="card-text">
+ 							<raw html={link.desc} />
+ 						</div>
+ 					</div>
 
 
-        </div>
-      </div>
-    </div>
+ 					<div class="row" if={ props.data.type=='experience' }>
+
+ 						<div class="collapsible">
+ 							<input id="collapsible-ex{index}" type="checkbox" name="collapsible">
+ 							<label for="collapsible-ex{index}">Responsibility</label>
+ 							<div class="collapsible-body">
+ 								<ul>
+ 									<li each={ link1 in link.content }> {link1.title}
+ 									</li>
+ 								</ul>
+ 							</div>
+ 						</div>
+ 					</div>
+
+           <div class="row" if={ props.data.type=='projects' }>
+
+ 						<div class="collapsible">
+ 							<input id="collapsible-pr{index}" type="checkbox" name="collapsible">
+ 							<label for="collapsible-pr{index}">Technology Used</label>
+ 							<div class="collapsible-body">
+ 								<ul>
+ 									<li each={ link1 in link.content }> {link1.title}
+ 									</li>
+ 								</ul>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</div>
+
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ </div>
 	<script>
 		import Raw from './raw.riot'
-		export default {
-			components: {
-				Raw
-			},
-             onMounted() {
-                //console.log(this.props.data)
-            },
-		}
-       
+      export default {
+        components: {
+          Raw
+        },
+        onMounted() {
+          //console.log(this.props.data)
+        },
+      }
 	</script>
 	<style>
 a {
@@ -94,7 +119,7 @@ a {
     padding-left: 30px;
     margin-left: 30px;
     position: relative;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);    width: calc(100% - 50px);
+    border-left: 1px solid rgba(136, 132, 132, 0.45);    width: calc(100% - 50px);
 } .masonry-item:before {
     content: "";
     position: absolute;

@@ -1,25 +1,32 @@
 <wrapper>
-  <nav>
-    <a href="/" class="brand">
-      <span> <i class="fab fa-gofore" ></i> GANESAN KARUPPAIYA</span>
-    </a>
 
-    <!-- responsive-->
-    <input id="bmenub" type="checkbox" class="show">
-    <label for="bmenub" class="burger pseudo button"><i class="fas fa-bars" ></i></label>
-
-    <div class="menu">
-      <a href="#{ log.data.tag }" 
-        class="pseudo button icon-picture" 
-        each={ log in state.list } 
+<nav class="border fixed split-nav header">
+  <div class="nav-brand">
+    <h3><a href="/"> GANESAN KARUPPAIYA</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+    <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        <li  each={ log in state.list } >
+        <a href="#{ log.data.tag }" 
+       
         data-tooltip={ log.data.tag }
       >
          <i class={ log.data.icon }></i> 
          <span class="hideDefaultMenu">{ log.data.tag }
-         </span></a>
-      
+         </span></a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <div each={ log in state.list } class="section " id={ log.data.tag }>
 
@@ -102,10 +109,10 @@
   </script>
 <style>
     .section:nth-child(odd) {
-      background-color: rgba(49,53,82,0.4)
+      background-color: #f1f1f1
     }
 
-    .header{background-color: rgba(53,55,69,1);}
+    .header{background-color: #f1f1f1}
 		.container {
 			position: relative;
 			width: 100%;
@@ -179,12 +186,12 @@
     text-align: left;
 }
  .growth-text-box .growth-text-icon {
-    font-size: 48px;
+    font-size: 36px;
 }
 .growth-text-box .title {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 700;
-    color: #ffffff;
+    color: #4b517d;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     text-align: left;
@@ -193,7 +200,7 @@
      font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #ffc576;
+    color: #797876;
     margin: 0px 0px 5px 0px;
     padding: 0px 0px 0px 0px;
     border-radius: 0px 0px 0px 0px;
@@ -256,18 +263,8 @@
 .feature-box .feature-content p{
     padding: 0;
     margin: 0;}
-.card-title {
-    font-size: 16px;
-    font-weight: 400;
-    color: #ffffff;
-    margin: 0px 0px 20px 0px;
-    padding: 0px 0px 0px 0px;
-    transition-duration: 0.3s;
-}
-.card .card-title:hover 
-{
-    color: #FFC576;
-}
+.card-title{ margin:0 0  0}
+
 .small{font-size: 84%;}
 	</style>
 </wrapper>
